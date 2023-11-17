@@ -1,10 +1,10 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version libs.versions.springBoot
-    id("io.spring.dependency-management") version libs.versions.dependencyManagement
-    kotlin("jvm") version libs.versions.kotlin
-    kotlin("plugin.spring") version libs.versions.kotlin
+    alias(libs.plugins.springBoot)
+    alias(libs.plugins.dependencyManagement)
+    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlinPluginSpring)
 }
 
 group = "com.example"
