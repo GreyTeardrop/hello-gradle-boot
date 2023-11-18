@@ -4,13 +4,13 @@ springBoot = "3.1.5"
 springCloud = "2022.0.4"
 
 [libraries]
-kotlinBom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
-springBootBom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
-springBootDevTools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "springBoot" }
-springBootConfigurationProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springBoot" }
-springCloudBom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloud" }
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
+springBoot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
+springBoot-devTools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "springBoot" }
+springBoot-configurationProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springBoot" }
+springCloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloud" }
 
 [plugins]
 springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
-kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlinPluginSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-pluginSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }

@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.springBoot)
-    alias(libs.plugins.kotlinJvm)
-    alias(libs.plugins.kotlinPluginSpring)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.pluginSpring)
 }
 
 group = "com.example"
@@ -18,9 +18,9 @@ repositories {
 }
 
 dependencies {
-    implementation(enforcedPlatform(libs.kotlinBom))
-    implementation(enforcedPlatform(libs.springBootBom))
-    implementation(enforcedPlatform(libs.springCloudBom))
+    implementation(enforcedPlatform(libs.kotlin.bom))
+    implementation(enforcedPlatform(libs.springBoot.bom))
+    implementation(enforcedPlatform(libs.springCloud.bom))
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -30,9 +30,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j")
-    developmentOnly(libs.springBootDevTools)
+    developmentOnly(libs.springBoot.devTools)
     runtimeOnly("io.micrometer:micrometer-registry-datadog")
-    annotationProcessor(libs.springBootConfigurationProcessor)
+    annotationProcessor(libs.springBoot.configurationProcessor)
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation("io.projectreactor:reactor-test")
