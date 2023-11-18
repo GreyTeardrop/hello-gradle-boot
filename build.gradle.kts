@@ -24,6 +24,7 @@ repositories {
 }
 
 dependencies {
+    implementation(enforcedPlatform(libs.kotlinBom))
     implementation(enforcedPlatform(libs.springBootBom))
     developmentOnly(enforcedPlatform(libs.springBootBom))
     annotationProcessor(enforcedPlatform(libs.springBootBom))

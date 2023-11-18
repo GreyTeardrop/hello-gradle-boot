@@ -1,9 +1,10 @@
 [versions]
-kotlin = "1.8.22"
+kotlin = "1.9.20"
 springBoot = "3.1.5"
 springCloud = "2022.0.4"
 
 [libraries]
+kotlinBom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
 springBootBom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
 springCloudBom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloud" }
 
