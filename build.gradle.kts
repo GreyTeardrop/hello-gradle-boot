@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     alias(libs.plugins.springBoot)
@@ -25,10 +24,10 @@ repositories {
 }
 
 dependencies {
-    implementation(enforcedPlatform(SpringBootPlugin.BOM_COORDINATES))
-    developmentOnly(enforcedPlatform(SpringBootPlugin.BOM_COORDINATES))
-    annotationProcessor(enforcedPlatform(SpringBootPlugin.BOM_COORDINATES))
-    implementation(enforcedPlatform("org.springframework.cloud:spring-cloud-dependencies:${libs.versions.springCloud.get()}"))
+    implementation(enforcedPlatform(libs.springBootBom))
+    developmentOnly(enforcedPlatform(libs.springBootBom))
+    annotationProcessor(enforcedPlatform(libs.springBootBom))
+    implementation(enforcedPlatform(libs.springCloudBom))
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.springframework.boot:spring-boot-starter-security")
