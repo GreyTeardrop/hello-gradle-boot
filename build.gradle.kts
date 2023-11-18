@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     alias(libs.plugins.springBoot)
-    alias(libs.plugins.dependencyManagement)
     alias(libs.plugins.kotlinJvm)
     alias(libs.plugins.kotlinPluginSpring)
 }
@@ -25,6 +25,10 @@ repositories {
 }
 
 dependencies {
+    implementation(enforcedPlatform(SpringBootPlugin.BOM_COORDINATES))
+    developmentOnly(enforcedPlatform(SpringBootPlugin.BOM_COORDINATES))
+    annotationProcessor(enforcedPlatform(SpringBootPlugin.BOM_COORDINATES))
+    implementation(enforcedPlatform("org.springframework.cloud:spring-cloud-dependencies:${libs.versions.springCloud.get()}"))
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -43,12 +47,6 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:mongodb")
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${libs.versions.springCloud.get()}")
-    }
 }
 
 tasks.withType<KotlinCompile> {
