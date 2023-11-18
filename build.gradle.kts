@@ -1,9 +1,3 @@
-buildscript {
-    configurations.classpath {
-        resolutionStrategy.activateDependencyLocking()
-    }
-}
-
 plugins {
     alias(libs.plugins.springBoot)
     alias(libs.plugins.kotlin.jvm)
@@ -21,10 +15,6 @@ configurations {
 
 repositories {
     mavenCentral()
-}
-
-dependencyLocking {
-    lockAllConfigurations()
 }
 
 dependencies {
