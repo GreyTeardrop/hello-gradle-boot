@@ -17,10 +17,14 @@ repositories {
     mavenCentral()
 }
 
+dependencyLocking {
+    lockAllConfigurations()
+}
+
 dependencies {
+    implementation(platform(libs.springBoot.bom))
+    implementation(platform(libs.springCloud.bom))
     implementation(enforcedPlatform(libs.kotlin.bom))
-    implementation(enforcedPlatform(libs.springBoot.bom))
-    implementation(enforcedPlatform(libs.springCloud.bom))
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.springframework.boot:spring-boot-starter-security")
