@@ -1,7 +1,7 @@
 [versions]
 kotlin = "1.9.21"
 springBoot = "3.2.0"
-springCloud = "2022.0.4"
+springCloud = "2023.0.0"
 
 [libraries]
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
